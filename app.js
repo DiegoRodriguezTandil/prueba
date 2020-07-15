@@ -20,7 +20,7 @@
                 $('.todo-ul').html(generate_new_todo_item(new_todo_text));
             } else {
                 last_mod_ref.find('.todo-text').text(new_todo_text);
-                
+                $('.todo-add-button').val(todo_add_button_insert);
             }
         });
 
