@@ -52,6 +52,42 @@
     </nav>    
 
     
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="control-label col-md-4">Comentario:</label>
+        <div class="col-md-8">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="float:left;">
+                            <button type="submit" class="btn btn-primary" id="js-guardar">Publicar!</button>
+                        </div>
+                    </div>
+    </div>
+    
+    <div class="container">
+
+        <section class="centrado">
+            <table class="table table-bordered tabla" id="tablita">
+                <thead class="tabla thead">
+                    <tr>
+                        <th scope="col">Texto</th>
+                    </tr>
+                </thead>
+        
+                <tbody class="tabla-container">
+                        
+                </tbody>
+            </table>
+        </section>
+
+        
+    </div>
+
+
+    
 
 </body>
 </html>
