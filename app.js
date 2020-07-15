@@ -14,20 +14,18 @@
     const generate_new_todo_item = (text) => {
       return `<li >
                         <span class="todo-text">${text}</span>
-                        <input type="button" class="done-todo-item" value="✔"></input>
-                        <input type="button" class="modify-todo-item" value="✏"></iput>
-                        <input type="button" class="delete-todo-item" value="✖"></input>
+                        <input type="button" class="done-todo-item btn btn-outline-primary" value="✔"></input>
+                        <input type="button" class="modify-todo-item btn btn-outline-primary" value="✏"></iput>
+                        <input type="button" class="delete-todo-item btn btn-outline-primary" value="✖"></input>
                     </li>`;
     };
 
     $(".todo-add-btn").click(function () {
       //Agregar a lista (nuevo y modificación)
-      console.log("Agregando...");
       let new_todo_text = $(".todo-text-input").val();
-      console.log("Valor:" + new_todo_text);
       if (new_todo_text !== "") {
         if (last_modified_ref === null) {
-          $(".todo-ul").html(generate_new_todo_item(new_todo_text));
+          $(".todo-ul").append(generate_new_todo_item(new_todo_text));
         } else {
           last_modified_ref.find(".todo-text").text(new_todo_text);
           $(".todo-add-button").val(todo_add_button_insert);

@@ -1,0 +1,32 @@
+
+.container>div {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-top: 5rem;
+}
+
+.todo-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+.todo-list {
+    width:100%;
+    min-height: 50rem;
+}
+
+.todo-list>h1 {
+    padding: 2rem 0 3rem 2rem;
+}
+
+.done-todo-item, .modify-todo-item, .delete-todo-item {
+    border-radius: 10%;
+    justify-content: flex-end;
+}
+
+li {
+    flex-direction: row;
+}
