@@ -10,7 +10,7 @@
         $("ul.todo-list");
       }
     })();
-    
+
     const generate_new_todo_item = (text) => {
       return `<li >
                         <span class="todo-text">${text}</span>
@@ -22,9 +22,9 @@
 
     $(".todo-add-btn").click(function () {
       //Agregar a lista (nuevo y modificación)
-      console.log('Agregando...');
+      console.log("Agregando...");
       let new_todo_text = $(".todo-text-input").val();
-      console.log('Valor:'+ new_todo_text)
+      console.log("Valor:" + new_todo_text);
       if (new_todo_text !== "") {
         if (last_modified_ref === null) {
           $(".todo-ul").html(generate_new_todo_item(new_todo_text));
@@ -67,6 +67,5 @@
         JSON.stringify($("ul.todo-list").contents())
       );
     });
-
   });
 })(jQuery);
