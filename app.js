@@ -8,6 +8,7 @@
     (function () {
       if (localStorage.todo_saved) {
         $("ul.todo-list");
+        //TODO
       }
     })();
 
