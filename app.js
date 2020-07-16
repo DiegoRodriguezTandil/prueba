@@ -45,12 +45,13 @@
       last_modified_ref = $(this).parent();
       $(".todo-text-input").val(last_modified_ref.find(".todo-text").text());
       $(".todo-add-button").val(todo_add_button_modify);
-    });
+    }); 
 
-    $(".delete-todo-item").click(function () {
-      //Borrar
-      $(this).parent().destroy();
-    });
+    
+    $(document).on("click", ".delete-todo-item", function () {
+      //Eliminar
+      $(this).parent().remove();
+   });
 
     $(".done-todo-item").click(function () {
       //Tachar
