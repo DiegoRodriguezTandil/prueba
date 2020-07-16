@@ -25,11 +25,11 @@
 
 <body">
 
+    <div class="container ">
     <div class="head-title">
         <h1 id="click">To-Do List</h1>
     </div>
 
-    <div class="container ">
         <div class="form-group">
             <input type="text" class="form-control mb-2 todo-text-input" placeholder="Escriba una tarea pendiente">
             <input type="button" class="todo-add-btn btn btn-outline-primary" value="Agregar">
