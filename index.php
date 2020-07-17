@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba con Mercedes y Pepe</title>
 
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -23,60 +20,27 @@
     </script>
 </head>
 
-<body">
+<body>
 
     <div class="container ">
-    <div class="head-title">
-        <h1 id="click">To-Do List</h1>
-    </div>
+        <div class="head-title">
+            <h1 id="click">To-Do List</h1>
+        </div>
 
         <div class="form-group">
-            <input type="text" class="form-control mb-2 todo-text-input" placeholder="Escriba una tarea pendiente">
-            <input type="button" class="todo-add-btn btn btn-outline-primary" value="Agregar">
-            <input type="button" class=" todo-cancel-btn btn btn-outline-danger" value="Cancelar">
-            <input type="button" class="store-todo-local btn btn-outline-success" value="Guardar">
+            <input type="text" class="form-control mb-2" placeholder="Escriba una tarea pendiente" name="_text"
+                modified_item_id="-1">
+            <input type="button" class="btn btn-outline-primary" value="Agregar" name="_add">
+            <input type="button" class="btn btn-outline-danger" value="Cancelar" name="_cancel">
+            <input type="button" class="btn btn-outline-success" value="Guardar" name="_save">
         </div>
-    <!-- <div class="form-group">
-        <label for="exampleFormControlTextarea1" class="control-label col-md-4">Comentario:</label>
-        <div class="col-md-8">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
-        </div>
-    </div>
-
-    <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group" style="float:left;">
-                            <button type="submit" class="btn btn-primary" id="js-guardar">Publicar!</button>
-                        </div>
-                    </div>
-    </div>
-    
-    <div class="container">
-
-        <section class="centrado">
-            <table class="table table-bordered tabla" id="tablita">
-                <thead class="tabla thead">
-                    <tr>
-                        <th scope="col">Texto</th>
-                    </tr>
-                </thead>
-        
-                <tbody class="tabla-container">
-                        
-                </tbody>
-            </table>
-        </section>
-
-        
-    </div> -->
-    
 
         <div class="todo-list border border-primary">
             <h1> Tareas para hacer: </h1>
-            <ul class="todo-ul flex-conteinter">
+            <ul class="todo-ul flex-conteinter" name="_list">
             </ul>
 
         </div>
-</body>
+        </body>
 
 </html>
