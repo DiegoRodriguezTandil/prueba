@@ -69,7 +69,6 @@ let id_e = 0;
         //TODO: Crear uno a uno los elementos guardados y cargarlos en la lista
         //Iterar sobre los elementos de localStorage
         let json = JSON.parse(localStorage.getItem("todo_list"));
-        console.log(json);
         for (var key in json) {
           $('ul[data-name$="_list"]').append(
             generate_new_todo_item(json[key], id_e++)
