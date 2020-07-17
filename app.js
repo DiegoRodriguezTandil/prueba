@@ -17,35 +17,35 @@ let id_e = 0;
       //Texto
       let new_text = $("<span>", {
         class: "todo-text",
-        _checked: false,
+        "data-checked": false,
+        "data-name": "_todo_text"
       }).text(text);
 
       //Tarea completa
       let btn_done = $("<input>", {
         class: "done-todo-item btn btn-outline-primary",
-        value: "✏",
+        value: "✔",
       }).on("click", function () {
         //Tachar o destachar
-        let elem = $(this).parent().find(".todo-text");
-        if (elem._checked) {
+        let elem = $(this).parent().find("[data-name='_todo_text']");
+        if (elem.data("checked")) {
           elem.css("text-decoration", "none");
-          elem.attr("_checked", false);
+          elem.data("checked", false);
         } else {
           elem.css("text-decoration", "line-through");
-          elem.attr("_checked", true);
+          elem.data("checked", true);
         }
       });
 
       //Modificar texto
       let btn_mod = $("<input>", {
         class: "modify-todo-item btn btn-outline-primary",
-        value: "✔",
+        value: "✏",
       }).on("click", function () {
-        //TODO: Completar el modificar
-        alert("A modificar");
-        let id = $(this).parent();
-        $('input[name$="_text"]').val(id.find(".todo-text").text()); //Caja de texto
-        $('input[name$="_add"]').val(todo_add_button_modify); //Boton agregar cambia a guardar
+        let id = $(this).parent().data("item_id");
+        let old_text = $(this).parent().find("[data-name='_todo_text'").text();
+        $('input[data-name$="_text"]').val(old_text).data("modified_item_id", id); //Caja de texto
+        $('input[data-name$="_add"]').val(todo_add_button_modify); //Boton agregar cambia a guardar
       });
 
       //Borrar tarea
@@ -58,38 +58,45 @@ let id_e = 0;
 
       //LI contenedor
       let list_i = $("<li>", {
-        "data-id-item": id,
+        "data-item_id": id,
       }).append(new_text, btn_done, btn_mod, btn_del);
       return list_i;
     };
 
     //Botones principales
-    $('input[name$="_add"]').click(function () {
+    $('input[data-name$="_add"]').click(function () {
       //Agregar a lista (nuevo y modificación)
-      let new_todo_text = $('input[name$="_text"]').val();
+      let text_box = $('input[data-name$="_text"]');
+      let new_todo_text = text_box.val();
+      let modified_item_id = text_box.data("modified_item_id");
       if (new_todo_text !== "") {
-        if ($('input[name$="_text"]').attr("modified_item_id") === "-1") {
-          $('ul[name$="_list"]').append(generate_new_todo_item(new_todo_text, id_e++));
+        if (modified_item_id == "-1") {
+          $('ul[data-name$="_list"]').append(generate_new_todo_item(new_todo_text, id_e++));
         } else {
-          //TODO: Guardar el nuevo texto en el item correspondiente
-          $('input[name$="_add"]').val(todo_add_button_insert);
+          $('li[data-item_id$="'+modified_item_id+'"]').find("[data-name='_todo_text'").text(new_todo_text);
+          $('input[data-name$="_add"]').val(todo_add_button_insert);
+          $('input[data-name$="_text"]').data("modified_item_id", "-1");
         }
+        text_box.val('');
       }
     });
 
-    $('input[name$="_cancel"]').click(function () {
+    $('input[data-name$="_cancel"]').click(function () {
       //Cancelar
-      $('input[name$="_add"]').val(todo_add_button_insert);
-      $('input[name$="_text"]').attr("modified_item_id", "-1");
+      $('input[data-name$="_add"]').val(todo_add_button_insert);
+      $('input[data-name$="_text"]').data("modified_item_id", "-1").val('');
     });
 
-    $('input[name$="_save"]').click(function (e) {
-      //TODO:Guardar la lista como JSONs, se necesita guardar el texto nada más $('ul[name$="_list"]')
+    $('input[data-name$="_save"]').click(function (e) {
+      //TODO:Guardar la lista como JSONs, se necesita guardar el texto nada más $('ul[data-name$="_list"]')
       e.preventDefault();
       localStorage.clear();
+      $("ul[data-name$='_list']").each( function(localStorage, )
+
+      )
       localStorage.setItem(
         "data-saved",
-        JSON.stringify($('ul[name$="_list"]').contents())
+        JSON.stringify($('ul[data-name$="_list"]').contents())
       );
     });
   });

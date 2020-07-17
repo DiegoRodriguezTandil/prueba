@@ -28,16 +28,16 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control mb-2" placeholder="Escriba una tarea pendiente" name="_text"
-                modified_item_id="-1">
-            <input type="button" class="btn btn-outline-primary" value="Agregar" name="_add">
-            <input type="button" class="btn btn-outline-danger" value="Cancelar" name="_cancel">
-            <input type="button" class="btn btn-outline-success" value="Guardar" name="_save">
+            <input type="text" class="form-control mb-2" placeholder="Escriba una tarea pendiente" data-name="_text"
+                data-modified_item_id="-1">
+            <input type="button" class="btn btn-outline-primary" value="Agregar" data-name="_add">
+            <input type="button" class="btn btn-outline-danger" value="Cancelar" data-name="_cancel">
+            <input type="button" class="btn btn-outline-success" value="Guardar" data-name="_save">
         </div>
 
         <div class="todo-list border border-primary">
             <h1> Tareas para hacer: </h1>
-            <ul class="todo-ul flex-conteinter" name="_list">
+            <ul class="todo-ul flex-conteinter" data-name="_list">
             </ul>
 
         </div>
